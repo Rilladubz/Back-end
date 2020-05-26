@@ -1,12 +1,28 @@
 require("dotenv").config();
-const server = require("./api/server");
 
+const express = require("express");
+const cors = require("cors");
+const { userRouter } = require("./routers");
+// const { taskRouter } = require("./routers");
+// const { profileRouter } = require("./routers");
+// const { tagRouter } = require("./routers");
+// const { avatarRouter } = require("./routers");
+// const { taskTagRouter } = require("./routers");
+const helmet = require("helmet");
+const server = express();
 
-const { userRouter } = require("./routers/user_router.js");
+// make sure that helmet is hiding the powered by
+server.use(express.json());
+server.use(cors());
+server.use(helmet());
 server.use("/api", userRouter);
+// server.use("/api", taskRouter);
+// server.use("/api", profileRouter);
+// server.use("/api", tagRouter);
+// server.use("/api", avatarRouter);
+// server.use("/api", taskTagRouter);
 
-
-//define port
+// const server = require("./api/server.js");
 const PORT = process.env.PORT || 7000;
 
 
