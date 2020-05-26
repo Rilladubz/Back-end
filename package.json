@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/Build-Week-Wunderlist-3/Back-end/issues"
   },
-  "homepage": "https://github.com/Build-Week-Wunderlist-3/Back-end#readme"
+  "homepage": "https://github.com/Build-Week-Wunderlist-3/Back-end#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0"
+  }
 }
