@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { userRouter } = require("./routers");
-// const { taskRouter } = require("./routers");
+const { taskRouter } = require("./routers");
 // const { profileRouter } = require("./routers");
 // const { tagRouter } = require("./routers");
 
@@ -15,7 +15,7 @@ server.use(express.json());
 server.use(cors());
 server.use(helmet());
 server.use("/api", userRouter);
-// server.use("/api", taskRouter);
+server.use("/api", taskRouter);
 // server.use("/api", profileRouter);
 // server.use("/api", tagRouter);
 

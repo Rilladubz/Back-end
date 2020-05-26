@@ -1,11 +1,11 @@
 const db = require("../data/db-config");
 
 module.exports = {
-    // USERS
+    // USERS ✅ 
     register,
     login,
     getUsers,
-    getAll,
+
     // PROFILE
     getProfile,
     addProfile,
