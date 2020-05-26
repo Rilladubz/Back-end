@@ -2,8 +2,8 @@ require("dotenv").config();
 const server = require("./api/server");
 
 
-// const { userRouter } = require("./routers/router.js");
-// server.use("/api", userRouter);
+const { userRouter } = require("./routers/user_router.js");
+server.use("/api", userRouter);
 
 
 //define port

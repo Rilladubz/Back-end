@@ -1,9 +1,9 @@
-const router = require("express").Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+const express = require("express");
 const userModel = require("../models/model");
-
-const secrets = require("../config/secrets");
+const bcrypt = require("bcryptjs");
+const generateToken = require("../token/token-generator");
+const authMiddleware = require("../middleware/auth");
+const router = express();
 
 function generateToken(user) {
     return jwt.sign(
@@ -19,7 +19,7 @@ function generateToken(user) {
 
 // async/await
 
-Router.post("/register", (req, res) => {
+router.post("/register", (req, res) => {
     const credentials = req.body;
     const hash = bcrypt.hashSync(credentials.password, 12);
     credentials.password = hash;
