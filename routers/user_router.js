@@ -19,7 +19,7 @@ function generateToken(user) {
 
 // async/await
 
-router.post("/register", (req, res) => {
+Router.post("/register", (req, res) => {
     const credentials = req.body;
     const hash = bcrypt.hashSync(credentials.password, 12);
     credentials.password = hash;
