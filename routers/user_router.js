@@ -53,16 +53,7 @@ router.post("/login", (req, res) => {
         });
 });
 
-router.get("/all", (req, res) => {
-    userModel
-        .getAll()
-        .then(result => {
-            res.status(200).json({ result });
-        })
-        .catch(err => {
-            console.log("err", err);
-            res.status(500).end();
-        });
-});
+
+
 
 module.exports = router;

@@ -6,8 +6,7 @@ const { userRouter } = require("./routers");
 // const { taskRouter } = require("./routers");
 // const { profileRouter } = require("./routers");
 // const { tagRouter } = require("./routers");
-// const { avatarRouter } = require("./routers");
-// const { taskTagRouter } = require("./routers");
+
 const helmet = require("helmet");
 const server = express();
 
@@ -19,10 +18,8 @@ server.use("/api", userRouter);
 // server.use("/api", taskRouter);
 // server.use("/api", profileRouter);
 // server.use("/api", tagRouter);
-// server.use("/api", avatarRouter);
-// server.use("/api", taskTagRouter);
 
-// const server = require("./api/server.js");
+
 
 server.get("/", (req, res) => {
     res.json({ message: "SERVER IS LIVE" });
