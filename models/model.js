@@ -1,4 +1,4 @@
-const db = require("../config/secrets");
+const db = require("../data/db-config");
 
 module.exports = {
     // USERS
