@@ -23,6 +23,12 @@ server.use("/api", userRouter);
 // server.use("/api", taskTagRouter);
 
 // const server = require("./api/server.js");
+
+server.get("/", (req, res) => {
+    res.json({ message: "SERVER IS LIVE" });
+});
+
+
 const PORT = process.env.PORT || 7000;
 
 
