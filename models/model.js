@@ -65,7 +65,6 @@ function addTask(id, taskData) {
             task: taskData.task,
             description: taskData.description,
             due_date: taskData.due_date,
-            timestamp: taskData.timestamp,
             completed: taskData.completed
         }, "id");
 }
