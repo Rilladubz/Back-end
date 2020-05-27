@@ -26,11 +26,11 @@ router.post("/register", (req, res) => {
         .then(newUser => {
             res.status(201).json({ message: `Welcome to Wunderlist!` });
         })
-        .catch(err => {
+        .catch(({ message }) => {
             console.log("register error", err);
             res
                 .status(500)
-                .json({ errorMessage: `Error registering users at this time` });
+                .json({ errorMessage: `Error registering users at this time`, message });
         });
 });
 
