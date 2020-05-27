@@ -30,7 +30,7 @@ module.exports = {
 // Users
 // Register
 function register(userData) {
-    return db("users").insert(userData);
+    return db("users").insert(userData, "id");
 }
 // Login
 
@@ -67,7 +67,7 @@ function addTask(id, taskData) {
             due_date: taskData.due_date,
             timestamp: taskData.timestamp,
             completed: taskData.completed
-        });
+        }, "id");
 }
 // UPDATE TASK
 function updateTask(id, taskData) {
@@ -96,15 +96,15 @@ function getTagId(id) {
 
 // ADD TAGS
 function addTag(tagData) {
-    return db("tags").insert(tagData);
+    return db("tags").insert(tagData, "id");
 }
-// UPDATE TASK
+// UPDATE TAG
 function updateTag(id, tagData) {
     return db("tags")
         .where(id)
         .update(tagData);
 }
-// DELETE TASK
+// DELETE TAG
 function removeTag(id) {
     return db("tags")
         .where(id)
@@ -124,7 +124,7 @@ function addProfile(id, profileData) {
         last_name: profileData.last_name,
         age: profileData.age,
         occupation: profileData.occupation
-    });
+    }, "id");
 }
 // UPDATE PROFILE
 function updateProfile(id, profileData) {
@@ -140,8 +140,5 @@ function removeProfile(id) {
         .delete();
 }
 
-// Get All User Info
-function getAll() {
-    return db("users", "profiles", "tasks", "avatar").select("*");
-}
+
 
