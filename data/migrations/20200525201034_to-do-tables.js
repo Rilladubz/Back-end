@@ -32,8 +32,7 @@ exports.up = function (knex) {
             tasks.increments();
             tasks.string("task").notNullable();
             tasks.string("description");
-            tasks.bigInteger("due_date");
-            tasks.bigInteger("timestamp");
+            tasks.date("due_date");
             tasks.boolean("completed").defaultTo("false");
             tasks
                 .integer("user_id")

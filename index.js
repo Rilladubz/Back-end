@@ -10,7 +10,7 @@ const { taskRouter } = require("./routers");
 const helmet = require("helmet");
 const server = express();
 
-// make sure that helmet is hiding the powered by
+
 server.use(express.json());
 server.use(cors());
 server.use(helmet());
