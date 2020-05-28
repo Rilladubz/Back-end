@@ -49,8 +49,8 @@ function getUsers() {
 // GET TASK
 function getTasks() {
     return db("tasks")
-        .orderBy("id")
-        .where({ user_id: id });
+        .orderBy("id");
+    // .where({ user_id: id });
 }
 // GET TASK BY ID
 function getTaskId(id) {
