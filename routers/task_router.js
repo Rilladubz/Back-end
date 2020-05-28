@@ -4,9 +4,9 @@ const middleware = require("../middleware/auth");
 const router = express();
 
 router.get("/tasks", middleware, (req, res) => {
-    const id = req.user.id;
+    // const id = req.user.id;
     taskModel
-        .getTasks(id)
+        .getTasks()
         .then(task => {
             res.status(200).json({ task });
         })
